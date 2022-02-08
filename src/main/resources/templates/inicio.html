@@ -1,0 +1,49 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmls="http://w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>Teste GRX 1 - Alexandre Perea Junior</title>
+</head>
+
+<body align="center">
+    <form action="/inicio" method="POST">
+        <p>
+            Nome:
+            <input type="text" name="nome" autofocus>
+            <br>
+            Idade:
+            <input type="text" name="idade">
+            <br><br>
+
+            <button type="submit">Salvar</button>
+
+            <hr>
+        </p>
+    </form>
+
+    <br>
+    <table border="1px" align="center">
+        <thead>
+            <tr>
+                <th><b>ID</b></th>
+                <th><b>Nome</b></th>
+                <th><b>Idade</b></th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="pessoa : ${pessoas}">
+
+                <td th:text="${pessoa.id}"> ID </td>
+
+                <td th:text="${pessoa.nome}"> Nome da pessoa </td>
+                <td th:text="${pessoa.idade}"> Idade </td>
+            </tr>
+        </tbody>
+    </table><br><hr>
+
+</body>
+
+</html>
